@@ -1,6 +1,6 @@
 <template>
-  <div v-show="show" class="dialogBox">
-    <ul>
+  <div v-show="show" class="vListContainer">
+    <ul class="listItem">
       <li v-for="(item, index) in arrMsg" :key="index" class="listItem">
         {{ item }}
       </li>
@@ -18,18 +18,18 @@ export default {
     };
   },
   mounted() {
-    for (let index = 0; index < 400000; index++) {
+    for (let index = 0; index < 100000; index++) {
       this.arrMsg.push(index);
     }
   },
 };
 </script>
-<style>
+<style scoped>
 * {
   margin: 0;
   padding: 0;
 }
-.dialogBox {
+.vListContainer {
   width: 500px;
   height: 1000px;
   background: #f5f6f8;
